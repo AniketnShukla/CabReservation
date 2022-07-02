@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url('../media/MainLoginBackground.jpg'); */
+    background-size: cover;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inmain-wrapper {
+    border: 1px solid blue;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.inmain {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../media/clientBg.jpg');
+    height: 100vh;
+    border: 1px solid red;
+    width: 100vw;
+    /* border: 1px solid blue; */
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dataform {
+    /* border: 1px solid red; */
+    border-radius: 1.5vmin;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    /* height: 50%; */
+    padding: 1rem;
+    /* margin-left: 60%; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.dataform input {
+    border-radius: 1vmin;
+    padding: .5vmin;
+    margin: .5vmin;
+}
+
+#jsonTable {
+    border: 2px black solid;
+    width: 70%;
+    color: black;
+    font-weight: bold;
+    /* background-color: snow; */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(253, 253, 253, 0.527));
+}
+
+.search {
+    color: red;
+    /* margin: 5vh; */
+    padding: 1rem;
+    padding: 1rem 3rem 1rem 3rem;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: ; */
+}
+
+.search input {
+    width: 25vw;
+    border-radius: 5px;
+    padding: 0.5rem 2.5rem;
+    padding-left: 0.5rem;
+    margin-right: 2em;
+    font-family: Oswald-Medium;
+    font-size: 16px;
+    color: #43383e;
+    line-height: 1.2;
+    /* width: 100%; */
+    height: 6vh;
+    background: #fff;
+    /* padding: 0 35px 0 35px; */
+}
+
+.search button {
+    border-radius: 1rem;
+    width: 35px;
+}

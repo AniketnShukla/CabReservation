@@ -1,0 +1,20 @@
+[
+    '{{repeat(500, 700)}}',
+    {
+      id: '{{objectId()}}',
+      carNo: '{{integer(10000, 99999)}}',
+      name: '{{firstName()}} {{surname()}}',
+      type: '{{random("premium", "pro", "go")}}',
+      capacity: '{{integer(2, 8)}}'
+    }
+  ]
+
+  [
+    '{{repeat(70)}}',
+    {
+      id: '{{objectId()}}',
+      name: '{{firstName()}} {{surname()}}',
+      email: '{{{email}}}',
+      phoneNo: '{{integer(900000, 999999)}}'
+    }
+  ]

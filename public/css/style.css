@@ -1,0 +1,11 @@
+body {
+    margin: 0px;
+    paddign: 0px;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+}

@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url('../media/MainLoginBackground.jpg'); */
+    background-size: cover;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inmain {
+    height: 100vh;
+    width: 100vw;
+    /* border: 1px solid blue; */
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dataform {
+    /* border: 1px solid red; */
+    border-radius: 1.5vmin;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    /* height: 50%; */
+    padding: 1rem;
+    /* margin-left: 60%; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.dataform input {
+    border-radius: 1vmin;
+    padding: .5vmin;
+    margin: .5vmin;
+}
+
+#jsonTable {
+    border: 2px black solid;
+    width: 70%;
+    background-color: snow;
+}
