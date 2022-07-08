@@ -42,10 +42,7 @@ app.get('/logout', logout);
 app.get('/login', login)
 app.get('/bookCab', bookCab);
 
-app.get('/bookCab/:carNo', (req, res) => {
-    console.log(req.params);
-
-});
+app.get('/bookCab/:type', bookCab);
 
 
 app.get('/main', (req, res) => {

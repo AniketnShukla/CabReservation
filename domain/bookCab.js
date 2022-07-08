@@ -9,10 +9,12 @@ const bookCab = (req, res) => {
     //delete this line for deployment
     session.email = 'aa@gmail.com'
         // console.log(session);
+    console.log('typeof req.query.id');
     console.log(typeof req.query.id);
+    console.log('req.query.id');
     console.log(req.query.id);
     if (req.query.id !== undefined && session.email !== undefined) {
-        let searchId = req.query.id;
+        console.log('here');
         fs.readFile(path.join(__dirname, '../', 'files', 'cabs.json'), 'utf-8', async(err, readData) => {
             if (err) throw err;
             cabsJsonArray = JSON.parse(readData);
@@ -41,27 +43,46 @@ const bookCab = (req, res) => {
                 res.redirect('/bookCab/' + jsonObj[jsonObj.length - 1].carNo);
             });
         })
-    } else {
-        if (req.query.id === undefined) {
-            console.log(req.query.id);
-            console.log('empty query');
-        } else if (session.email === undefined) {
-            console.log('no session email');
-        }
+    } else if (req.params !== undefined) {
+        console.log(typeof req.params);
+        console.log('in else if req.params !==')
+        type = req.params.type;
+        fs.readFile(path.join(__dirname, '../', 'files', 'cabs.json'), 'utf-8', async(err, readData) => {
+                try {
+                    if (err) throw err;
+                    readJsonArray = JSON.parse(readData);
+                    if (type !== undefined) {
+                        console.log(' inside type != undefinided ')
+                            // console.log('if')
+                        const allCabs = await readJsonArray.filter(user => user.type === type);
+                        const cabs = allCabs.slice(0, 6);
+                        console.log('cabs');
+                        console.log(cabs);
+                        res.render(__dirname + "./../views/bookCab.ejs", { 'cabs': cabs })
+                    }
+                    //capacity values passed, problem mostly lying in the await part, the filter function mostly not returning data before rendering.
+                    // else res.redirect('/bookCab');
+                } catch (err) {
+                    if (err) throw err;
+                }
 
+            })
+            // res.redirect('/bookCab/' + jsonObj[jsonObj.length - 1].carNo);  
+    } else {
+        console.log('last else');
+        // if (req.query.id === undefined) {
+        //     console.log(req.query.id);
+        //     console.log('empty query');
+        // }  if (session.email === undefined) {
+        //     console.log('no session email');
+        // 
         res.render(__dirname + "./../views/bookCab.ejs", { 'cabs': null });
     }
 };
 //takes array of json objects as argument and the session
 const checkUser = (userJsonArray, session) => {
-    return new Promise((resolve, reject) => {
-
-        // console.log(session.email);
-        //filter's clause should be in one line  if its in this format, because it didnt work other way 
-        a = userJsonArray.filter(user => user.email === session.email);
-        // console.log('jere');
-        // console.log(user.email + ' ' + session.email);
-        // console.log(al);
+    return new Promise((resolve, reject) => { // console.log(session.email);//filter's clause should be in one line  if its in this format, because it didnt work other way 
+        a = userJsonArray.filter(user => user.email === session.email); // console.log('jere');// console.log(user.email + ' ' + session.email);// console.log(al);
         resolve(a);
     });
 }
