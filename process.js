@@ -177,7 +177,7 @@ const compressFile = (filePath) => {
         .pipe(createGzip())
         .pipe(createWriteStream(`${filePath}.gz`))
         .on("finish", () =>
-            console.log(`Siccessfully compressed the file at ${filePath}`)
+            console.log(`Successfully compressed the file at ${filePath}`)
         );
 };
 

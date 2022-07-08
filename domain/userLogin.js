@@ -1,3 +1,5 @@
+//Post request for login
+
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
@@ -15,7 +17,7 @@ const userLogin = (req, res) => {
             if (await bcrypt.compare(req.body.password, user.Hashedpassword)) {
                 session = req.session;
                 session.email = req.body.email;
-                res.redirect('/clientMain');
+                res.redirect('/loginLanding');
 
             } else {
                 //Make a toast notify to show wrong password

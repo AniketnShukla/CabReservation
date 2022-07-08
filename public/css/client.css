@@ -100,3 +100,8 @@ body {
     border-radius: 1rem;
     width: 35px;
 }
+
+.loginMiddle {
+    border: 1px solid red;
+    color: white;
+}

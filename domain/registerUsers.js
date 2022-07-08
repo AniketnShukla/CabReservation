@@ -16,12 +16,13 @@ const registerUsers = async(req, res) => {
             console.log(readJsonArray);
             fs.writeFile(path.join(__dirname, '../', "files", 'users.json'), JSON.stringify(readJsonArray), (err) => {
                     if (err) throw err;
+
                 })
                 // console.log(users)
                 // readJ.push(user);
                 // console.log(users)
                 // res.status(201).send();
-            res.redirect('/registerUsers');
+            res.redirect('/login');
         })
     } catch (err) {
         // res.status(500).send();
