@@ -15,6 +15,8 @@ const login = require('./domain/login');
 const logout = require('./domain/logout');
 const preLoginLanding = require('./domain/preLoginLanding');
 const loginLanding = require('./domain/loginLanding');
+const bookedPage = require('./domain/bookedPage.js');
+const compress = require('./domain/compress.js');
 //devTools
 const sessionCheck = require('./domain/devTools/sessionCheck');
 
@@ -41,8 +43,12 @@ app.get('/loginLanding', loginLanding)
 app.get('/logout', logout);
 app.get('/login', login)
 app.get('/bookCab', bookCab);
+app.get('/bookedPage', bookedPage);
 
+//does it have a purpose anymore
+//check teh control flow of book a cab 
 app.get('/bookCab/:type', bookCab);
+// app.get('/bookCab/booked/', something);
 
 
 app.get('/main', (req, res) => {
@@ -56,10 +62,14 @@ app.get('/registerUsers', (req, res) => {
 app.get('/adminlogin', (req, res) => {
     res.render(__dirname + "/views/adminlogin.ejs")
 })
+app.get('/adminLoginLanding', (req, res) => {
+    res.render(__dirname + "/views/adminLoginLanding.ejs")
+})
 
 app.get("/registerAdmin", (req, res) => {
     res.render(__dirname + "/views/registerAdmin.ejs");
 });
+app.get("/admin/compress/users", compress());
 
 //post requests
 app.post('/login', userLogin);

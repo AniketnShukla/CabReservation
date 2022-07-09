@@ -38,16 +38,28 @@
         <div class="inmain">
             <div class="inmain-wrapper">
                 <div class="search">
-                    <a href="/bookCab/go"><button>Go</button></a>
-                    <a href="/bookCab/pro"><button>Pro</button></a>
-                    <a href="/bookCab/premium"><button>Premium</button></a>
-                    <form method="POST" action="/bookCab">
-                        <div>
-                        </div>
-                        <input type="text" name="type" placeholder="Pickup">
-                        <input type="text" name="capacity" placeholder="Destination">
+                    <div class="type-button-group">
+                        <!-- <a href="/bookCab/go"><button>Go</button></a>
+                        <a href="/bookCab/pro"><button>Pro</button></a>
+                        <a href="/bookCab/premium"><button>Premium</button></a> -->
+                        <!-- <a href="/bookCab/?type=go"><button>Go</button></a>
+                        <a href="/bookCab/?type=pro"><button>Pro</button></a>
+                        <a href="/bookCab/?type=premium"><button>Premium</button></a> -->
+                        <form method="post" action="/bookCab">
+                            <input type="radio" id="go1" name="type" value="go">
+                            <label for="go">Go</label><br>
+                            <input type="radio" id="pro1" name="type" value="pro">
+                            <label for="pro">Pro</label><br>
+                            <input type="radio" id="premium1" name="type" value="premium">
+                            <label for="premium">Premium</label>
+                    </div>
+                    <div>
+                        <input type="text" name="pickup" placeholder="Pickup">
+                        <input type="text" name="destination" placeholder="Destination">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
                     </form>
+
 
                 </div>
                 <table class="table table-hover" id="jsonTable">
@@ -78,9 +90,11 @@
                                         <%= cabs[i].capacity %>
                                     </td>
                                     <td>
-                                        <a href=" <%='/bookCab/?id='+cabs[i].id %>">
-                                            <button>Book</button>
+
+                                        <a href=" <%='/bookCab/?id='+cabs[i].id+'&pickup='+location.pickup+'&destination='+location.destination %>">
+                                            <button type="submit" ">Book</button>
                                         </a>
+
                                         <!-- <form action="/clientmMain" method="get"></form>
                                     <input "type="text" name="id" >
                                     <button type="submit">Book</button> -->
@@ -92,7 +106,6 @@
                     </tbody>
                 </table>
 
-
             </div>
         </div>
     </div>
@@ -100,4 +113,4 @@
     <script src="./public/script.js"></script>
 </body>
 
-</html>
+</html>e

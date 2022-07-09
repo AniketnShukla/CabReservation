@@ -62,7 +62,7 @@ body {
 
 #jsonTable {
     border: 2px black solid;
-    width: 70%;
+    width: 100%;
     color: black;
     font-weight: bold;
     /* background-color: snow; */
@@ -76,8 +76,22 @@ body {
     padding: 1rem 3rem 1rem 3rem;
     /* width: 100%; */
     display: flex;
-    flex-direction: row;
+    border: 1px solid grey;
+    flex-direction: column;
     /* justify-content: ; */
+}
+
+.type-button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+}
+
+.type-button-group button {
+    height: 5rem;
+    width: 8rem;
+    margin: 2rem;
 }
 
 .search input {
@@ -98,7 +112,7 @@ body {
 
 .search button {
     border-radius: 1rem;
-    width: 35px;
+    /* width: 35px; */
 }
 
 .loginMiddle {

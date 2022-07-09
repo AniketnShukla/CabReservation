@@ -1,1 +1,5 @@
-hardcoded session email in bookCab because session details reset each time you rerun nodemon
+hardcoded session email in bookCab because session details reset each time you rerun nodemon //in bookCab check idea code for displaying cab booked
+
+<!-- <a href=" <%='/bookCab/?id='+cabs[i].id+'&pick='+locationDetails.pickup+'&dest='locationDetails.destination %>"> -->
+in bookcab.ejs //id is being displayed, but not being sent to the url //to dopickupand destuation oas params done. think ahead // add comments to everything describing whats aht push to github. 1. check teh control flow of book a cab error in compression
+admin side, work on admin side, compression and sorting, and dispalying users,cabs and all booked cabs of the complany and add comments to the code
