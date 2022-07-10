@@ -17,6 +17,7 @@ const preLoginLanding = require('./domain/preLoginLanding');
 const loginLanding = require('./domain/loginLanding');
 const bookedPage = require('./domain/bookedPage.js');
 const compress = require('./domain/compress.js');
+const displayData = require('./domain/displayData.js');
 //devTools
 const sessionCheck = require('./domain/devTools/sessionCheck');
 
@@ -69,7 +70,8 @@ app.get('/adminLoginLanding', (req, res) => {
 app.get("/registerAdmin", (req, res) => {
     res.render(__dirname + "/views/registerAdmin.ejs");
 });
-app.get("/admin/compress/users", compress());
+app.get("/admin/compress/:fileName", compress);
+app.get("/admin/display/:displayData", displayData);
 
 //post requests
 app.post('/login', userLogin);

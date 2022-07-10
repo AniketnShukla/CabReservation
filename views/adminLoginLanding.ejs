@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b4b1828725.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./public/css/client.css">
@@ -12,42 +13,45 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: absolute; z-index: 2; width: 100%; background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="nav" style="position: absolute; z-index: 2; width: 100%;">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/registerUsers">Register <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/bookCab">Book Cab <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/compress/users">Compress <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+        <ul class="nav_ul_list">
+            <li class="nav_head">
+                <a href="#">Navbar</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_link" href="/login">Login</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_link" href="/registerUsers">Register <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_link" href="/bookCab">Book Cab <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav_item">
+                <div class="dropdown">
+                    <button class="dropbtn">Compress</button>
+                    <div class="dropdown-content">
+                        <a href="/admin/compress/users">Users</a>
+                        <a href="/admin/compress/cabs">Cabs</a>
+
                     </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
+                </div>
+            </li>
+            <li class="nav_item">
+                <div class="dropdown">
+                    <button class="dropbtn">Display</button>
+                    <div class="dropdown-content">
+                        <a href="/admin/display/users">Users</a>
+                        <a href="/admin/display/cabs">Cabs</a>
+                        <a href="/admin/display/bookedUsers">Booked Cabs</a>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+
     </nav>
     <div class="main">
         <div class="inmain">
