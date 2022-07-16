@@ -10,6 +10,7 @@
         "express-flash": "^0.0.2",
         "express-session": "^1.17.3",
         "gunzip-file": "^0.1.1",
+        "i": "^0.3.7",
         "passport": "^0.6.0",
         "passport-local": "^1.0.0"
     },

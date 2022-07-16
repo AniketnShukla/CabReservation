@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const app = express();
+const fs = require('fs');
 const port = 3000;
 const searchCabs = require('./domain/searchCabs');
 const path = require('path');
@@ -17,7 +18,7 @@ const preLoginLanding = require('./domain/preLoginLanding');
 const loginLanding = require('./domain/loginLanding');
 const bookedPage = require('./domain/bookedPage.js');
 const compress = require('./domain/compress.js');
-const displayData = require('./domain/displayData.js');
+// const displayData = require('./domain/displayData.js');
 //devTools
 const sessionCheck = require('./domain/devTools/sessionCheck');
 
@@ -56,6 +57,30 @@ app.get('/main', (req, res) => {
     res.render(__dirname + "/views/main.ejs")
 });
 
+app.get('/displayusers', function(req, res) {
+    fs.readFile(path.join(__dirname, './files/users.json'), 'utf-8', (err, readData) => {
+        if (err) throw err;
+        readJson = JSON.parse(readData);
+        res.render(path.join(__dirname, './views/displayusers.ejs'), { 'data': readJson })
+    });
+})
+
+app.get('/displaycabs', function(req, res) {
+    fs.readFile(path.join(__dirname, './files/cabs.json'), 'utf-8', (err, readData) => {
+        if (err) throw err;
+        readJson = JSON.parse(readData);
+        res.render(path.join(__dirname, './views/displaycabs.ejs'), { 'data': readJson })
+    });
+})
+
+app.get('/displaybooked', function(req, res) {
+    fs.readFile(path.join(__dirname, './files/bookedUsers.json'), 'utf-8', (err, readData) => {
+        if (err) throw err;
+        readJson = JSON.parse(readData);
+        res.render(path.join(__dirname, './views/displaybooked.ejs'), { 'data': readJson })
+    });
+})
+
 app.get('/registerUsers', (req, res) => {
     res.render(__dirname + "/views/registerUsers.ejs")
 })
@@ -66,12 +91,14 @@ app.get('/adminlogin', (req, res) => {
 app.get('/adminLoginLanding', (req, res) => {
     res.render(__dirname + "/views/adminLoginLanding.ejs")
 })
-
+app.get('/compressdata', (req, res) => {
+    res.render(__dirname + "/views/compressdata.ejs")
+})
 app.get("/registerAdmin", (req, res) => {
     res.render(__dirname + "/views/registerAdmin.ejs");
 });
 app.get("/admin/compress/:fileName", compress);
-app.get("/admin/display/:displayData", displayData);
+// app.get("/admin/display/:displayData", displayData);
 
 //post requests
 app.post('/login', userLogin);

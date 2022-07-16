@@ -10,8 +10,9 @@ const bookCab = (req, res) => {
     console.log('in get request bookCab');
     if (Object.keys(req.query).length !== 0 && session.email !== undefined) {
         console.log('query processing clause');
-        console.log();
+        // console.log();
         type = req.query.type;
+        console.log(type);
         //showing selected type data
 
         if (type !== undefined && req.query.id === undefined) {

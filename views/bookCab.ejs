@@ -5,17 +5,143 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b4b1828725.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/bookcab.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <a href="/loginlanding">
+                <img src="/public/media/1.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="/views/explore.html">EXPLORE</a></li>
+                <li><a href="/views/aboutus.html">ABOUT US</a></li>
+                <li><a href="/views/contactus.html">CONTACT US</a></li>
+            </ul>
+            <button type="submit" class="login"><a href="/logout">LOGOUT</a></button>
+        </nav>
+        <div class="banner">
+            <form method="post" action="/bookCab" class="form-inline">
+                <a class="ab" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    GO
+                    <input class="form-check-input" type="radio" id="go1" name="type" value="go">
+                    <label class="form-check-label" for="inlineRadio1">
+                    </label>
+                </a>
+                <a class="ab" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    PRO
+                    <input class="form-check-input" type="radio" id="pro1" name="type" value="pro">
+                    <label class="form-check-label" for="inlineRadio1">
+                    </label>
+                </a>
+                <a class="ab" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    PREMIUM
+                    <input class="form-check-input" type="radio" id="premium1" name="type" value="premium">
+                    <label class="form-check-label" for="inlineRadio1">
+                    </label>
+                </a>
+                <br />
+                <div class="form">
+                    <label for="pickup" class="form_label">PICKUP</label>
+                    <input type="text" id="pickup" name="pickup" class="form_input">
+                </div>
+                <div class="form">
+                    <label for="pickup" class="form_label">DESTINATION</label>
+                    <input type="text" id="pickup" name="destination" class="form_input">
+                </div>
+                <br />
+                <div class="submit">
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form><br>
+        </div><br><br>
+        <div>
+            <table class="table table-hover" id="jsonTable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Driver</th>
+                        <th scope="col">Car No</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">book</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% if(cabs !==null) { %>
+                        <% for(var i=0; i < cabs.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <%= cabs[i].name %>
+                                </td>
+                                <td>
+                                    <%= cabs[i].carNo %>
+                                </td>
+                                <td>
+                                    <%= cabs[i].type %>
+                                </td>
+                                <td>
+                                    <%= cabs[i].capacity %>
+                                </td>
+                                <td>
+
+                                    <a
+                                        href=" <%='/bookCab/?id='+cabs[i].id+'&pickup='+location.pickup+'&destination='+location.destination %>">
+                                        <button type="submit">Book</button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } %>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/b4b1828725.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b4b1828725.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/public/css/client.css">
     <title>Book Cab</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: absolute; z-index: 2; width: 100%; background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"
+        style="position: absolute; z-index: 2; width: 100%; background-color: #e3f2fd;">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,12 +165,12 @@
             <div class="inmain-wrapper">
                 <div class="search">
                     <div class="type-button-group">
-                        <!-- <a href="/bookCab/go"><button>Go</button></a>
+                        <a href="/bookCab/go"><button>Go</button></a>
                         <a href="/bookCab/pro"><button>Pro</button></a>
-                        <a href="/bookCab/premium"><button>Premium</button></a> -->
-                        <!-- <a href="/bookCab/?type=go"><button>Go</button></a>
+                        <a href="/bookCab/premium"><button>Premium</button></a>
+                        <a href="/bookCab/?type=go"><button>Go</button></a>
                         <a href="/bookCab/?type=pro"><button>Pro</button></a>
-                        <a href="/bookCab/?type=premium"><button>Premium</button></a> -->
+                        <a href="/bookCab/?type=premium"><button>Premium</button></a>
                         <form method="post" action="/bookCab">
                             <input type="radio" id="go1" name="type" value="go">
                             <label for="go">Go</label><br>
@@ -74,7 +200,7 @@
                     </thead>
                     <tbody>
 
-                        <% if(cabs !== null) { %>
+                        <% if(cabs !==null) { %>
                             <% for(var i=0; i < cabs.length; i++) { %>
                                 <tr>
                                     <td>
@@ -91,13 +217,14 @@
                                     </td>
                                     <td>
 
-                                        <a href=" <%='/bookCab/?id='+cabs[i].id+'&pickup='+location.pickup+'&destination='+location.destination %>">
+                                        <a
+                                            href=" <%='/bookCab/?id='+cabs[i].id+'&pickup='+location.pickup+'&destination='+location.destination %>">
                                             <button type="submit" ">Book</button>
                                         </a>
 
-                                        <!-- <form action="/clientmMain" method="get"></form>
-                                    <input "type="text" name="id" >
-                                    <button type="submit">Book</button> -->
+                                        <form action=" /clientmMain" method="get"></form>
+                                                <input "type=" text" name="id">
+                                                <button type="submit">Book</button>
                                     </td>
                                 </tr>
                                 <% } %>
@@ -113,4 +240,4 @@
     <script src="./public/script.js"></script>
 </body>
 
-</html>e
+</html>e -->

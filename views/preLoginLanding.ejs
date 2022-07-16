@@ -4,46 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/b4b1828725.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./public/css/client.css">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>DELTA</title>
+    <link rel="stylesheet" href="/public/css/client.css" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: absolute; z-index: 2; width: 100%; background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item =">
-                    <a class="nav-link" href="/registerUsers">Register <span class="sr-only">(current)</span></a>
-                </li>
-
+    <div class="header">
+        <nav>
+            <img src="/public/media/1.png" class="logo">
+            <ul>
+                <li><a href="/views/explore.html">EXPLORE</a></li>
+                <li><a href="/adminlogin">ADMIN</a></li>
+                <li><a href="">CONTACT US</a></li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-    <div class="main">
-        <div class="inmain">
-            <div class="loginMiddle">
+            <button type="submit" class="register"><a href="/registerUsers">REGISTER</a></button>
+        </nav>
+        <div class="banner">
+            <h1>Delta Cab Services</h1>
+            <h3>Wheels for the rescue!</h3><br>
+            <p class="para">Login to book your ride!</p>
+            <br>
+            <button type="submit" class="login"><a href="/login">LOGIN</a></button>
 
-                <h1> Pre Login Landing Page</h1>
-
-            </div>
         </div>
     </div>
-    <script src="./public/script.js"></script>
+
 </body>
 
 </html>
