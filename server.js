@@ -18,6 +18,8 @@ const preLoginLanding = require('./domain/preLoginLanding');
 const loginLanding = require('./domain/loginLanding');
 const bookedPage = require('./domain/bookedPage.js');
 const compress = require('./domain/compress.js');
+const addCabs = require('./domain/addCabs');
+
 // const displayData = require('./domain/displayData.js');
 //devTools
 const sessionCheck = require('./domain/devTools/sessionCheck');
@@ -112,7 +114,10 @@ app.post("/registerAdmin", registerAdmin);
 //dev tools
 app.get('/session', sessionCheck)
 
-
+app.get('/AddCabs', (req, res) => {
+    res.render(path.join(__dirname, '/views/AddCabs.ejs'));
+});
+app.post('/addCabs', addCabs);
 app.listen(port, function() {
     console.log(`Server listening at port ${port}`);
 })

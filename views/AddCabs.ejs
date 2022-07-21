@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b4b1828725.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../public/css/adminloginlanding.css">
+    <title>Welcome Admin</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <a href="/adminLoginLanding"><img src="/public/media/1.png" class="logo"></a>
+
+            <button type="submit" class="register"><a href="/logout">LOGOUT</a></button>
+        </nav>
+        <div class="banner">
+            <h1>ADD CABS</h1><br>
+            <form action="" method="post" id="form1">
+                <p style="font-size:1.7em;">Cab ID</p>
+                <input type="text" name="n1" placeholder="Cab ID" style="height:7vh; width:40vh;border-radius:7px;">
+                <p style="font-size:1.7em;">Car NO</p>
+                <input type="text" name="n2" placeholder="Cab Number" style="height:7vh; width:40vh;border-radius:7px;">
+                <p style="font-size:1.7em;">Driver Name</p>
+                <input type="text" name="n3" placeholder="Driver Name" style="height:7vh; width:40vh;border-radius:7px;">
+                <p style="font-size:1.7em;">CAR TYPE</p>
+
+                <input type="radio" id="html" name="n4" value="go">
+                <label for="html">Go</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="css" name="n4" value="pro">
+                <label for="css">Pro</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="javascript" name="n4" value="premium">
+                <label for="javascript">Premium</label>
+                <!-- <input type="text" name="n4" placeholder="Car Type" style="height:7vh; width:40vh;border-radius:7px;"> -->
+
+
+                <p style="font-size:1.7em;">CAPACITY</p>
+                <input type="text" name="n5" placeholder="Capacity" style="height:7vh; width:40vh;border-radius:7px;"><br><br>
+                <button type="submit" style="height:7vh;width:15vh;font-size:30px;background:black;border-color:yellow;color:white; border-radius:5px;">Submit</button>
+                <!-- <input type="submit"> -->
+                <!-- id insertion -->
+            </form>
+        </div>
+
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>DIGILEARN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/AddCourses.css" />
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/AdminL"><img src="./img/logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Welcome ADMIN</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>ADD COURSES</h2>
+            <form>
+                <div class="row">
+                    <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="courseName">COURSE NAME</label>
+                    <input type="text" class="form-control" name="n1 " id="courseName" placeholder="Enter Course Name">
+                </div>
+                <div class="form-group">
+                    <label for="courseAuthor">COURSE AUTHOR</label>
+                    <input type="text" class="form-control" name="n2" id="courseAuthor" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="courseDuration">COURSE DURATION</label>
+                    <input type="text" class="form-control" name="n3" id="courseDuration" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="courseRating">COURSE RATING(OUT OF 5)</label>
+                    <input type="text" class="form-control" name="n4" id="courseRating" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>DIGILEARN</title>
+    <link rel="stylesheet" href="./../public/css/AddCourses.css" />
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/AdminL"><img src="../public/media/1.png" class="logo"></a>
+            <h1 style="color:white; margin-left:100px;">ADD COURSES</h1>
+                </div>
+        <div class="content">
+           
+        </div>
+    </div>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/AdminL.css">
+    <title>Digilearn</title>
+
+</head>
+
+<body>
+    <form action="" method="post">
+        <input type="text" name="n1" placeholder="Course Name">
+        <input type="text" name="n2" placeholder="Course Author">
+        <input type="text" name="n3" placeholder="Course Duration in Hours">
+        <input type="text" name="n4" placeholder="Rating">
+        <input type="submit">
+        id insertion
+    </form>
+</body>
+
+</html> -->
+<!-- 
+<form action="" method="post" class="forminput">
+    <h3>COURSE NAME</h3><br>
+    <input type="text" name="n1" placeholder="Course Name"><br>
+    <h3>COURSE AUTHOR</h3><br>
+    <input type="text" name="n2" placeholder="Course Author"><br>
+    <h3>COURSE DURATION</h3><br>
+    <input type="text" name="n3" placeholder="Course Duration in Hours"><br>
+    <h3>COURSE RATING(OUT OF 5)</h3><br>
+    <input type="text" name="n4" placeholder="Rating"><br>
+    <button type="submit">Submit</button> -->
+<!-- <input type="submit"> -->
+<!-- id insertion -->
+<!-- </form> -->

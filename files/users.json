@@ -656,5 +656,12 @@
         "phoneNo": "",
         "password": "",
         "Hashedpassword": "$2b$10$puyqVSjenybZZ5.9cwmE9u7j0ajUAcg9bmOoov7HCBBPbeQZb7TIW"
+    },
+    {
+        "name": "g",
+        "email": "go@gmail.com",
+        "phoneNo": "123",
+        "password": "ggg",
+        "Hashedpassword": "$2b$10$TAYoVwsXE5jMrPhinFdX.Outu4A4BPDPOoVsXU/9OWICR56q/6YMa"
     }
 ]
