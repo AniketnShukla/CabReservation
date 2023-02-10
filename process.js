@@ -18,7 +18,7 @@ const sep = '|';
 const end = '\n';
 const users = [];
 let creds = [];
-
+//test2 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view-engine", "ejs");
